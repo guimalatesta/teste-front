@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(50px);
+  z-index: 1;
+  animation: moveInDiagonal 15s infinite alternate;
+  mix-blend-mode: screen; /* Isso fará com que os círculos atuem como "luzes" sobre o fundo preto */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAAmElEQVRoge3BAQEAAAABIP6PzgpVAAAAAElFTkSuQmCC"); /* Padrão granulado */
+  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%); /* Forma irregular */
+}
+
+@keyframes moveInDiagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50vw, 50vh);
+  }
+}
